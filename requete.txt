@@ -1,0 +1,19 @@
+Exercice 1 SELECT :
+SELECT username FROM users;
+SELECT * FROM users WHERE id = 3;
+SELECT username FROM users WHERE id = 2;
+SELECT * FROM users ORDER BY id DESC;
+SELECT * FROM users LIMIT 3 OFFSET 3;
+
+Exercice 2 INSERT :
+INSERT INTO users (username, email, job) VALUES ("Spiderman", "peter.parker@daily-bugle.com", "1");
+INSERT INTO jobs (name) VALUES ("Lycéen");
+
+Exercice 3 JOIN :
+SELECT users.email, jobs.name FROM users JOIN jobs ON users.job = jobs.id WHERE users.username = "Spiderman";
+SELECT * FROM users JOIN jobs ON users.job = jobs.id;
+SELECT * FROM users JOIN jobs ON users.job = jobs.id WHERE jobs.name = "Journaliste";
+
+Exercice 4 UPDATE :
+UPDATE users SET job = 5 WHERE users.id = 7;
+DELETE FROM users WHERE users.username = "Batman";
