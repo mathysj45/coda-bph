@@ -1,0 +1,24 @@
+<main class="container py-5">
+    <?php 
+        require "controllers/get-user.php"; 
+    ?>
+    
+    <a href="index.php?route=list">Retour à la liste</a>
+    
+    <?php if ($user && isset($user['username'])) { ?>
+        <h1 class="my-5">Détails de l'utilisateur : <?= $user['username'] ?></h1>
+
+        <div class="card p-4">
+            <p><strong>ID :</strong> <?= $user['id'] ?></p>
+            <p><strong>Nom d'utilisateur :</strong> <?= $user['username'] ?></p>
+            <p><strong>Email :</strong> <?= $user['email'] ?></p>
+            <p><strong>Emploi :</strong>
+            <?php if ($user['job'] == 1) echo 'Journaliste'; ?>
+            <?php if ($user['job'] == 2) echo 'Conservateur de musée'; ?>
+            <?php if ($user['job'] == 3) echo 'Riche'; ?>
+            <?php if ($user['job'] == 4) echo 'Vétéran'; ?>
+            <?php if ($user['job'] == 5) echo 'Lycéen'; ?>
+        </p>
+        </div>
+    <?php } ?>
+</main>
